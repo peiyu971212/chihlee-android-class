@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Activity</string>
+    <string name="register">Register</string>
+    <string name="register_hint">sign up to get started!</string>
+    <string name="name">Name</string>
+    <string name="first_name_hint">Enter First Name</string>
+    <string name="last_name">LastName</string>
+    <string name="last_name_hint">Enter Last Name</string>
+    <string name="mobile">Mobile No.</string>
+    <string name="mobile_no">+886</string>
+    <string name="mobile_hint">Enter Mobile No.</string>
+    <string name="email">Email Address</string>
+    <string name="email_hint">hello@example.com</string>
+    <string name="password">Password</string>
+    <string name="checkbox_desc">I agree to  the Terms &amp; Conditions
+and Privacy Policy</string>
+    <string name="create_account">CREATE ACCOUNT</string>
+    <string name="google_sign">Continue with Google</string>
+    <string name="google_sign_hint">Already have an account?</string>
+    <string name="sign_in">Sign in</string>
+
+
+</resources>
