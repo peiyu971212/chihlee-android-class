@@ -10,6 +10,9 @@
 |-- 20240308_game_listener_2          # 2024/03/08 Ch3-物件控制與事件監聽
 |-- 20240315_game_advanced            # 2024/03/15 Ch3-物件控制與事件監聽-猜拳遊戲程式設計進階
 |-- Kotlin                            # 2024/03/18 kotlin基礎介紹
+|-- Activity                          # 2024/03/22 Ch4-Login頁面切換至Register
+|-- Activity2                         # 2024/03/25 Ch4-新增Activity
+|-- PromptComponent                   # 2024/03/29 Ch5 訊息提示元件
 |-- RegisterUI                        # 作業1-註冊介面設計
 |-- Shop                              # 2024/03/11 練習-介面設計
 '-- README.md
