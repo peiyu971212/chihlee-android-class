@@ -15,6 +15,7 @@
 |-- Activity2                         # 2024/03/25 Ch4-新增Activity
 |-- PromptComponent                   # 2024/03/29 Ch5 訊息提示元件
 |-- ShopApp                           # 2024/04/08 課堂作業-Activity練習
+|-- ShopApp2                          # 2024/04/12
 |-- RegisterUI                        # 作業1-註冊介面設計
 '-- README.md
 ```
