@@ -39,6 +39,11 @@ class RegisterActivity : AppCompatActivity() {
             loginIntent.putExtras(bundle)
             //發送Intnet
             startActivity(intent)
+
+            //  返回資料至上一個畫面
+            val intent2 = Intent(this, LoginActivity::class.java)
+            startActivityForResult(intent, 1)
+
         }
 
         btnLogin.setOnClickListener {

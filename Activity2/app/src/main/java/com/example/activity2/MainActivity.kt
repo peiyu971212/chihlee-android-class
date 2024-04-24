@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
 
         val btnSwitch = findViewById<Button>(R.id.btn_switch)
 
-        btnSwitch.setOnTouchListener() {
-            val intent=Intent(this,MainActivity2::class.java)
+        btnSwitch.setOnClickListener {
+            val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
         }
 

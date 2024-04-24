@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 //        =====================================================
 //        空值安全
 //        沒有使用？，無法用null
-//        val stringNull1: String = null
+        val stringNull1: String? = null
 //
         val stringNull2: String? = null
         Log.d(TAG, "print null: $stringNull2")
@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         }
         Log.d(TAG, answerStringWhen)
 
-//        =====================================================
+        //        =====================================================
 //        函式
         fun generateAnswerString(): String {
             val answerString = if (count == 42) {
@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "===function input and output===: ${generateAnswer(9)}")
 
 //        =====================================================
-        val account ="1234567  "
+        val account = "1234567  "
         val accountName = account!!.trim()
         Log.d(TAG, "print accountName: $accountName")
     }
