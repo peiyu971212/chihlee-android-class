@@ -15,11 +15,11 @@ class FruitAdapter(context: Context, private val layout: Int, data: ArrayList<Fr
         //依據 position 取得對應的資料內容
         val item = getItem(position) ?: return view
         //將圖片指派給 ImageView 呈現
-        val img_photo = view.findViewById<ImageView>(R.id.img_photo)
-        img_photo.setImageResource(item.photo)
-        //將訊息指派給 TextView 呈現，若是垂直排列則為名稱，否則為名稱及價格
-        val tv_msg = view.findViewById<TextView>(R.id.tv_msg)
-        tv_msg.text = item.name
+        val ivPhoto = view.findViewById<ImageView>(R.id.iv_photo)
+        ivPhoto.setImageResource(item.photo)
+        //將訊息指派給 TextView 呈現
+        val tvName = view.findViewById<TextView>(R.id.tv_name)
+        tvName.text = item.name
         //回傳此項目的畫面
         return view
     }
