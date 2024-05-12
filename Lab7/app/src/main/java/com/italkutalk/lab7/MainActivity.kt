@@ -31,11 +31,11 @@ class MainActivity : AppCompatActivity() {
         //設定橫向顯示列數
         gridView.numColumns = 3
         //建立 MyAdapter 物件，並傳入 adapter_vertical 作為畫面
-        gridView.adapter = FruitAdapter(this, R.layout.item_fruit_vertical, data)
+        gridView.adapter = FruitAdapter(this, R.layout.item_fruit_gridview, data)
         //建立 MyAdapter 物件，並傳入 adapter_horizontal 作為畫面
         listView.adapter = FruitAdapter(
             this,
-            R.layout.item_fruit_horizontal, data
+            R.layout.item_fruit, data
         )
     }
 }
