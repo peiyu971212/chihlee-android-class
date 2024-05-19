@@ -22,5 +22,6 @@
 |-- ListView圖檔                       # 2024/05/06 Ch7 ListView清單元件
 |-- ListView                          # 2024/05/06 Ch7 ListView清單元件
 |-- Lab7                              # 2024/05/10 Ch7 清單元件 ListView, GridView, Spinner
+|-- Contact                           # 2024/05/17 Ch8 RecyclerView進階清單元件
 '-- README.md
 ```
