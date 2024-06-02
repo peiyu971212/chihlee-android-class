@@ -1,0 +1,238 @@
+{
+  "uuid": "ebd441f0-a064-4221-b944-c84f7e988e61",
+  "lastMigration": 22,
+  "name": "Shop Demo App",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3002,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "bad63b7a-aa02-483e-97fd-286e7c21c9fc",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "shop/product_list",
+      "responses": [
+        {
+          "uuid": "0be0cb33-3428-439a-88ec-1206ff8aa722",
+          "body": "[\n  {\n    \"productId\":\"0\",\n    \"productName\":\"商品1\",\n    \"productPrice\":200,\n    \"imageUrl\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\"\n  },\n  {\n    \"productId\":\"1\",\n    \"productName\":\"商品2\",\n    \"productPrice\":400,\n    \"imageUrl\": \"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/e3d72728-4900-4e71-a4ea-1f323bb570d8/custom-nike-air-force-1-high-by-you-shoes.png\"\n  },\n  {\n    \"productId\":\"2\",\n    \"productName\":\"商品3\",\n    \"productPrice\":500,\n    \"imageUrl\": \"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/fea9fd17-a50b-4d72-9eba-60a632b756cc/air-max-plus-%E7%94%B7-Z0D37G.png\"\n  },\n  {\n    \"productId\":\"3\" ,\n    \"productName\":\"商品4\" ,\n    \"productPrice\":600,\n    \"imageUrl\": \"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/b5ab0a6c-6393-4af6-abbc-4f1acaa6ed94/air-max-dawn-womens-shoes-224mWf.png\"\n  },\n  {\n    \"productId\":\"4\" ,\n    \"productName\":\"商品5\" ,\n    \"productPrice\":700,\n    \"imageUrl\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\"\n  },\n  {\n    \"productId\":\"5\",\n    \"productName\":\"商品6\",\n    \"productPrice\":200,\n    \"imageUrl\": \"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/b5ab0a6c-6393-4af6-abbc-4f1acaa6ed94/air-max-dawn-womens-shoes-224mWf.png\"\n  },\n  {\n    \"productId\":\"6\",\n    \"productName\":\"商品7\",\n    \"productPrice\":800,\n    \"imageUrl\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "4cc1a6e0-cdeb-40f9-b0c0-97892e9da62e",
+      "documentation": "position = 0",
+      "method": "get",
+      "endpoint": "shop/procudt_detail/:position",
+      "responses": [
+        {
+          "uuid": "e775d284-9723-422e-ba97-34fd5d6f0890",
+          "body": "{\n  \"productId\":\"1\",\n  \"productName\":\"商品1\",\n  \"productPrice\":400,\n  \"imageUrl\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\",\n  \"productDescription\":\"商品1The Nike Air Max 270 React ENG combines a full-length React foam midsole with a 270 Max Air unit for unrivaled comfort and a striking visual experience.\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "position = 0",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "position",
+              "value": "0",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "dc4c063a-2cb4-4592-95f7-8fece86b5bd8",
+          "body": "{\n  \"productId\":\"1\",\n  \"productName\":\"商品2\",\n  \"productPrice\":400,\n  \"imageUrl\": \"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/e3d72728-4900-4e71-a4ea-1f323bb570d8/custom-nike-air-force-1-high-by-you-shoes.png\",\n  \"productDescription\":\"商品2The Nike Air Max 270 React ENG combines a full-length React foam midsole with a 270 Max Air unit for unrivaled comfort and a striking visual experience.\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "position = 1",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "position",
+              "value": "1",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "d6ca5175-572a-4b73-8061-b3eed4c7f9f9",
+          "body": "{\n  \"productId\":\"2\",\n  \"productName\":\"商品3\",\n  \"productPrice\":500,\n  \"imageUrl\": \"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/fea9fd17-a50b-4d72-9eba-60a632b756cc/air-max-plus-%E7%94%B7-Z0D37G.png\",\n  \"productDescription\":\"商品3The Nike Air Max 270 React ENG combines a full-length React foam midsole with a 270 Max Air unit for unrivaled comfort and a striking visual experience.\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "position = 2",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "position",
+              "value": "2",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "9841fa7d-71de-4982-a5e0-148a29c58594",
+          "body": "{\n  \"productId\":\"3\" ,\n  \"productName\":\"商品4\" ,\n  \"productPrice\":600,\n  \"imageUrl\": \"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/b5ab0a6c-6393-4af6-abbc-4f1acaa6ed94/air-max-dawn-womens-shoes-224mWf.png\",\n  \"productDescription\":\"商品4The Nike Air Max 270 React ENG combines a full-length React foam midsole with a 270 Max Air unit for unrivaled comfort and a striking visual experience.\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "position = 3",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "position",
+              "value": "3",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "0da2b709-81ab-4fc6-afa0-334a17725c0f",
+          "body": "{\n  \"productId\":\"4\" ,\n  \"productName\":\"商品5\" ,\n  \"productPrice\":700,\n  \"imageUrl\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\",\n  \"productDescription\":\"商品5The Nike Air Max 270 React ENG combines a full-length React foam midsole with a 270 Max Air unit for unrivaled comfort and a striking visual experience.\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "position = 4",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "position",
+              "value": "4",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "93394e58-e7eb-45d8-9331-6369f5945c7c",
+          "body": "{\n  \"productId\":\"5\",\n  \"productName\":\"商品6\",\n  \"productPrice\":200,\n  \"imageUrl\": \"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/b5ab0a6c-6393-4af6-abbc-4f1acaa6ed94/air-max-dawn-womens-shoes-224mWf.png\",\n  \"productDescription\":\"商品6The Nike Air Max 270 React ENG combines a full-length React foam midsole with a 270 Max Air unit for unrivaled comfort and a striking visual experience.\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "position = 5",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "position",
+              "value": "5",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "0b936360-74bb-48f0-b1b3-8778ee5e1b29",
+          "body": "{\n  \"productId\":\"6\",\n  \"productName\":\"商品7\",\n  \"productPrice\":800,\n  \"imageUrl\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\",\n  \"productDescription\":\"商品7The Nike Air Max 270 React ENG combines a full-length React foam midsole with a 270 Max Air unit for unrivaled comfort and a striking visual experience.\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "position = 6",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "position",
+              "value": "6",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
