@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">listener</string>
-    <string name="tv_text1">text1</string>
-    <string name="tv_text2">text2</string>
-    <string name="btn">Press Me!!</string>
-    <string name="tv_Hello">Hello!!</string>
-</resources>
