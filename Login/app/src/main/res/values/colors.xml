@@ -4,5 +4,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue_light">#90CAF9</color>  <!-- 淺藍 -->
     <color name="blue_dark">#0D47A1</color>  <!-- 深藍 -->
+    <color name="blue">#D8E9F8</color>
+    <color name="blue_200">#90CAF9</color>
+    <color name="blue_400">#90CAF9</color>
+    <color name="blue_900">#196BC7</color>
+    <color name="gray">#EDEFF3</color>
+    <color name="gray_100">#B0B0B0</color>
+    <color name="gray_200">#79828E</color>
 </resources>
 
