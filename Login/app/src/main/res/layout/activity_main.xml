@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Login"
+        android:text="@string/tv_login"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
-        android:text="Email Address"
+        android:text="@string/tv_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_login" />
 
@@ -47,7 +47,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/edit_text_background"
-        android:hint="hello@example.com"
+        android:hint="@string/et_hint_email"
         android:inputType="text"
         android:paddingLeft="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="12dp"
-        android:text="Password"
+        android:text="@string/tv_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
@@ -74,7 +74,7 @@
         android:background="@drawable/edit_text_background"
         android:inputType="textPassword"
         android:paddingLeft="8dp"
-        android:text="password"
+        android:text="@string/et_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_password" />
@@ -86,7 +86,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="64dp"
         android:background="@drawable/button_bg"
-        android:text="Login"
+        android:text="@string/tv_login"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -116,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Continue with Google"
+            android:text="@string/tv_google_login"
             android:textSize="16sp" />
     </LinearLayout>
 
