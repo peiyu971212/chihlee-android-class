@@ -57,6 +57,14 @@ class MainActivity : AppCompatActivity() {
                 else -> "布"
             }
 
+            val playerResult2 = if (btnScissor.isChecked) {
+                "剪刀"
+            } else if (btnStone.isChecked) {
+                "石頭"
+            } else {
+                "布"
+            }
+
             //顯示玩家姓名與雙方出拳結果
             tvName.text = "名字\n$playerName"
             tvMe.text = "我方出拳\n$playerResult"
