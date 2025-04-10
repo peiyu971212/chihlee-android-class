@@ -101,6 +101,7 @@ class MainActivity : AppCompatActivity() {
 
         val answerString = generateAnswerString()
         Log.d(TAG, "function output: $answerString")
+        //        =====================================================
 
         fun generateAnswerString(countThreshold: Int): String {
             val answerString = if (count > countThreshold) {
@@ -114,7 +115,30 @@ class MainActivity : AppCompatActivity() {
 
         val answerStringInput = generateAnswerString(42)
         Log.d(TAG, "function input and output: $answerStringInput")
+        //        =====================================================
 
+        fun generateAnswerDefault(countThreshold: Int = 10): String {
+            val answerString = if (count > countThreshold) {
+                "I have the answer."
+            } else {
+                "The answer eludes me."
+            }
+
+            return answerString
+        }
+
+        val answerStringDefault = generateAnswerDefault(40)
+        Log.d(TAG, "function default: $answerStringDefault")
+
+        //        =====================================================
+        fun greet(message: String = "Hello", name: String = "World") {
+            Log.d(TAG, "$message, $name!")
+        }
+        greet() // 輸出：Hello, World!
+        greet("Alice") // 輸出：Hello, Alice!
+        greet("Hi", "Bob") // 輸出：Hi, Bob!
+
+        //        =====================================================
         fun generateAnswer(countThreshold: Int): String {
             return if (count > countThreshold) {
                 "I have the answer."
@@ -124,9 +148,35 @@ class MainActivity : AppCompatActivity() {
         }
         Log.d(TAG, "===function input and output===: ${generateAnswer(9)}")
 
-//        =====================================================
-        val account = "1234567  "
-        val accountName = account!!.trim()
+        //        =====================================================
+//        單一表達式函式
+//        Step1:
+//        fun double(x: Int): Int {
+//            return x * 2
+//        }
+//        val result = double(10)
+//        Log.d(TAG, "double result: $result")
+
+//        Step2:單一表達式函式
+//        fun double(x: Int): Int = x * 2
+//        val result = double(10)
+//        Log.d(TAG, "double result: $result")
+
+//        Step3:匿名函式
+        // 將 double 函式修改成匿名函式，並賦值給變數 doubleFunction
+        val doubleFunction: (Int) -> Int = { x -> x * 2 }
+        // 呼叫匿名函式
+        val result2 = doubleFunction(5)
+        Log.d(TAG, "double result2: $result2")
+
+        //        =====================================================
+//        val account = "1234567  "
+//        val account: String? = null
+//        val accountName = account!!.trim()
+//        Log.d(TAG, "print accountName: $accountName")
+        //        =====================================================
+        val account: String? = null
+        val accountName = account?.trim()
         Log.d(TAG, "print accountName: $accountName")
     }
 }
