@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Login</string>
-    <string name="tv_login">Login</string>
-    <string name="tv_email">Email Address</string>
-    <string name="et_hint_email">hello@example.com</string>
-    <string name="tv_password">Password</string>
-    <string name="et_password">1234567</string>
-    <string name="tv_google_login">Continue with Google</string>
-</resources>
