@@ -5,5 +5,10 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+<!--    <style name="Base.Theme.Login" parent="Theme.AppCompat.DayNight.DarkActionBar">-->
+<!--        &lt;!&ndash; Customize your light theme here. &ndash;&gt;-->
+<!--        &lt;!&ndash; <item name="colorPrimary">@color/my_light_primary</item> &ndash;&gt;-->
+<!--    </style>-->
+
     <style name="Theme.Login" parent="Base.Theme.Login" />
 </resources>
