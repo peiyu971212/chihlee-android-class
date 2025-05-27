@@ -1,0 +1,175 @@
+{
+  "uuid": "18262c63-e966-47ed-9606-f851c86c4c5e",
+  "lastMigration": 32,
+  "name": "MockApi",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "routes": [
+    {
+      "uuid": "1216a477-1592-4323-ad73-c57a79997c4a",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "product_list",
+      "responses": [
+        {
+          "uuid": "0ee50816-6243-49b9-a522-635bd3841767",
+          "body": "{\n  \"status\": 200,\n  \"message\": \"Success\",\n  \"data\": [\n    {\n      \"id\": 1,\n      \"productName\": \"Backpack\",\n      \"price\": 109,\n      \"image\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\"\n    },\n    {\n      \"id\": 2,\n      \"productName\": \"T-Shirts\",\n      \"price\":  22,\n      \"image\": \"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg\"\n    },\n    {\n      \"id\": 3,\n      \"productName\": \"Jacket\",\n      \"price\":  55,\n      \"image\": \"https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg\"\n    },\n    {\n      \"id\": 4,\n      \"productName\": \"Mens Casual Slim Fit\",\n      \"price\": 15,\n      \"image\": \"https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg\"\n    },\n    {\n      \"id\": 5,\n      \"productName\": \"Bracelet\",\n      \"price\": 695,\n      \"image\": \"https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg\"\n    },\n    {\n      \"id\": 6,\n      \"productName\": \"Jewelery\",\n      \"price\": 168,\n      \"image\": \"https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "type": "http"
+    },
+    {
+      "uuid": "c9dc35f6-a850-423d-816f-0e1215e9a3aa",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "product/detail/:productId",
+      "responses": [
+        {
+          "uuid": "db60a152-02fe-4b75-8658-38ed20a59b24",
+          "body": "{\n  \"status\": 200,\n  \"message\": \"success\",\n  \"data\": {\n    \"id\": 1,\n    \"title\": \"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\",\n    \"price\": 109.95,\n    \"description\": \"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday\",\n    \"category\": \"men's clothing\",\n    \"image\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "id=1",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "produtId",
+              "value": "1",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "070512ba-75f9-45d1-ac43-ac77078ab69f",
+          "body": "{\n  \"status\": 200,\n  \"message\": \"success\",\n  \"data\": {\n\"id\": 2,\n\"title\": \"Mens Casual Premium Slim Fit T-Shirts \",\n\"price\": 22.3,\n\"description\": \"Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.\",\n\"category\": \"men's clothing\",\n\"image\": \"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "id=2",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "produtId",
+              "value": "2",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "f9b04453-bd54-4c8e-8ebb-f267ac1debc8",
+          "body": "{\n  \"status\": 200,\n  \"message\": \"success\",\n  \"data\": {\n\"id\": 3,\n\"title\": \"Mens Cotton Jacket\",\n\"price\": 55.99,\n\"description\": \"great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.\",\n\"category\": \"men's clothing\",\n\"image\": \"https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "id=3",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "produtId",
+              "value": "3",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "type": "http"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "folders": [],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "1216a477-1592-4323-ad73-c57a79997c4a"
+    },
+    {
+      "type": "route",
+      "uuid": "c9dc35f6-a850-423d-816f-0e1215e9a3aa"
+    }
+  ],
+  "callbacks": []
+}
