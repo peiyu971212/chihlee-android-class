@@ -6,28 +6,23 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
         //將變數與 XML 元件綁定
-        val editName = findViewById<EditText>(R.id.editName)
-        val tvHint = findViewById<TextView>(R.id.tvHint)
-        val btnScissor = findViewById<RadioButton>(R.id.btnScissor)
-        val btnStone = findViewById<RadioButton>(R.id.btnStone)
-        val btnPaper = findViewById<RadioButton>(R.id.btnPaper)
-        val tvName = findViewById<TextView>(R.id.tvName)
-        val tvWinner = findViewById<TextView>(R.id.tvWinner)
-        val tvMe = findViewById<TextView>(R.id.tvMe)
-        val tvComputer = findViewById<TextView>(R.id.tvComputer)
-        val btnStart = findViewById<Button>(R.id.btnStart)
+        val editName = findViewById<EditText>(R.id.edt_name)
+        val tvHint = findViewById<TextView>(R.id.tv_hint)
+        val btnScissor = findViewById<RadioButton>(R.id.rb_scissor)
+        val btnStone = findViewById<RadioButton>(R.id.rb_stone)
+        val btnPaper = findViewById<RadioButton>(R.id.rb_paper)
+        val tvName = findViewById<TextView>(R.id.tv_name)
+        val tvWinner = findViewById<TextView>(R.id.tv_winner)
+        val tvMe = findViewById<TextView>(R.id.tv_me)
+        val tvComputer = findViewById<TextView>(R.id.tv_computer)
+        val btnStart = findViewById<Button>(R.id.btn_start)
 
 //        tvName.text = "你的名字"
 //        tvName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30f)
