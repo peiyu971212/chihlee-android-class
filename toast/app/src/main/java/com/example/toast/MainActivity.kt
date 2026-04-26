@@ -28,13 +28,14 @@ class MainActivity : AppCompatActivity() {
         // Button 點擊事件
         btnToast.setOnClickListener {
             Toast.makeText(this, "預設 Toast", Toast.LENGTH_LONG).show()
+//            Toast.makeText(this, R.string.toast_text, Toast.LENGTH_LONG).show()
         }
 
         btnCustom.setOnClickListener {
             //宣告 Toast
             val toast = Toast(this)
             //Toast 在畫面中顯示位置
-            toast.setGravity(Gravity.BOTTOM, 0, 50)
+            toast.setGravity(Gravity.LEFT, 50, -50)
 
             //Toast 在畫面中顯示的持續時間
             toast.duration = Toast.LENGTH_SHORT

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">toast</string>
+    <string name="toast_text">預設 Toast</string>
 </resources>
