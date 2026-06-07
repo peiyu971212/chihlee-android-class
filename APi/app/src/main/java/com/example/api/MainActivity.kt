@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call, e: IOException) {
-                Log.d("TAG", "onFailure: ")
+                Log.d("TAG", "onFailure: ${e.message}")
             }
         })
 
