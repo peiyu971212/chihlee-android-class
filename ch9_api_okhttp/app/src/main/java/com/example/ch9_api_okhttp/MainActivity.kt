@@ -104,30 +104,39 @@ class MainActivity : AppCompatActivity() {
 
         // POST
         btnPostCallApi.setOnClickListener {
-            //POST
-            val type = "application/json; charset=utf-8".toMediaTypeOrNull() // 定義 JSON 媒體類型
-            val gson = Gson() // 創建 Gson 實例
-            val postRequest = PostRequest(
-                userId = 1,
-            )
-            val jsonString = gson.toJson(postRequest) // 將 PostRequest 對象轉換為 JSON 字串
-            val body = jsonString.toRequestBody(type) // 將 JSON 字串轉換為 RequestBody
-
-            val req = Request.Builder()
-                .url("https://jsonplaceholder.typicode.com/posts")
-                .post(body)
-                .build()
-
-            OkHttpClient().newCall(req).enqueue(object : Callback {
-                override fun onResponse(call: Call, response: Response) {
-                    val json = response.body?.string()
-                    Log.d("TAG", "onResponse post: $json")
-                }
-
+            val myPost = PostRequest(userId = 1)
+            apiService.createPost(myPost,object : Callback{
                 override fun onFailure(call: Call, e: IOException) {
-                    Log.d("TAG", "onFailure: ${e.message}")
                 }
+
+                override fun onResponse(call: Call, response: Response) {
+                }
+
             })
+            //POST
+//            val type = "application/json; charset=utf-8".toMediaTypeOrNull() // 定義 JSON 媒體類型
+//            val gson = Gson() // 創建 Gson 實例
+//            val postRequest = PostRequest(
+//                userId = 1,
+//            )
+//            val jsonString = gson.toJson(postRequest) // 將 PostRequest 對象轉換為 JSON 字串
+//            val body = jsonString.toRequestBody(type) // 將 JSON 字串轉換為 RequestBody
+//
+//            val req = Request.Builder()
+//                .url("https://jsonplaceholder.typicode.com/posts")
+//                .post(body)
+//                .build()
+//
+//            OkHttpClient().newCall(req).enqueue(object : Callback {
+//                override fun onResponse(call: Call, response: Response) {
+//                    val json = response.body?.string()
+//                    Log.d("TAG", "onResponse post: $json")
+//                }
+//
+//                override fun onFailure(call: Call, e: IOException) {
+//                    Log.d("TAG", "onFailure: ${e.message}")
+//                }
+//            })
         }
 
     }
