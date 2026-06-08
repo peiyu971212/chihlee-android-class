@@ -23,6 +23,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView // 加上 lateinit，意思是：等一下再初始化
     private lateinit var commentAdapter: CommentAdapter
 
+    // 宣告介面，並實體化剛剛寫好的 Impl 類別
+    private val apiService: ApiService = CommentApiServiceImpl()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -42,29 +45,17 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         // GET
-        OkHttpClient().newCall(getReq).enqueue(object : Callback {
-
-            // 狀況 A：網路斷線或伺服器根本連不上
+        apiService.getCommentsByPostId(1, object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                e.printStackTrace()
-                Log.d("TAG", "onFailure: "+e.message)
-                // 這裡可以跳出 Toast 提示使用者「檢查網路連線」
             }
 
-            // 狀況 B：伺服器有回應了（不論是成功還是找不到網頁）
             override fun onResponse(call: Call, response: Response) {
                 response.use {
-                    if (!response.isSuccessful) {
-                        // 伺服器回報錯誤（例如：404 找不到網頁、500 伺服器壞了）
-                        return
-                    }
+                    if (!response.isSuccessful) return
 
-                    // 成功拿到 JSON 資料！
-                    val jsonResult = response.body?.string()
-                    // 1. jsonResult 拿出來後，下一步就是用 Gson 轉成第三步定義的 Comment 類別。
-                    // 2. 目前是在背景執行緒，如果要用 textView.text = jsonResult 更新畫面，
-                    //    一定要包在 runOnUiThread { ... } 裡面喔！
-                    Log.d("TAG", "onResponse: $jsonResult")
+                    val jsonResult = response.body?.string() ?: ""
+
+                    // 用 Gson 解析 JSON 陣列
                     val gson = Gson()
                     val itemType = object : TypeToken<List<Comment>>() {}.type
                     val comments: List<Comment> = gson.fromJson(jsonResult, itemType)
@@ -76,7 +67,42 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+//        OkHttpClient().newCall(getReq).enqueue(object : Callback {
+//
+//            // 狀況 A：網路斷線或伺服器根本連不上
+//            override fun onFailure(call: Call, e: IOException) {
+//                e.printStackTrace()
+//                Log.d("TAG", "onFailure: "+e.message)
+//                // 這裡可以跳出 Toast 提示使用者「檢查網路連線」
+//            }
+//
+//            // 狀況 B：伺服器有回應了（不論是成功還是找不到網頁）
+//            override fun onResponse(call: Call, response: Response) {
+//                response.use {
+//                    if (!response.isSuccessful) {
+//                        // 伺服器回報錯誤（例如：404 找不到網頁、500 伺服器壞了）
+//                        return
+//                    }
+//
+//                    // 成功拿到 JSON 資料！
+//                    val jsonResult = response.body?.string()
+//                    // 1. jsonResult 拿出來後，下一步就是用 Gson 轉成第三步定義的 Comment 類別。
+//                    // 2. 目前是在背景執行緒，如果要用 textView.text = jsonResult 更新畫面，
+//                    //    一定要包在 runOnUiThread { ... } 裡面喔！
+//                    Log.d("TAG", "onResponse: $jsonResult")
+//                    val gson = Gson()
+//                    val itemType = object : TypeToken<List<Comment>>() {}.type
+//                    val comments: List<Comment> = gson.fromJson(jsonResult, itemType)
+//
+//                    // 切換回主執行緒更新 RecyclerView
+//                    runOnUiThread {
+//                        commentAdapter.updateData(comments)
+//                    }
+//                }
+//            }
+//        })
 
+        // POST
         btnPostCallApi.setOnClickListener {
             //POST
             val type = "application/json; charset=utf-8".toMediaTypeOrNull() // 定義 JSON 媒體類型
